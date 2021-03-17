@@ -6,12 +6,15 @@ public class MovementPlayer : MonoBehaviour
 {
     [SerializeField]
     private int m_PlayerSpeed = 0;
+
+    [SerializeField]
+    private SO_PlayerController m_PlayerControllerAsset  = null;
     public Vector2 MovementInput = Vector2.zero;
 
    
     private void Update()
     {
-        Movements(MovementInput, Time.deltaTime);
+        Movements(m_PlayerControllerAsset.MovementVector, Time.deltaTime);
     }
 
     public void Movements(Vector2 _Direction, float _DeltaTime)
