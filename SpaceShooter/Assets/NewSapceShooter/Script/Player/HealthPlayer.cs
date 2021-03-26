@@ -1,24 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class HealthPlayer : MonoBehaviour
 {
     [SerializeField]
     private int m_Life = 3;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Update()
     {
-        
+        if(Keyboard.current[Key.Q].wasPressedThisFrame)
+        {
+            TakesDamages(1);
+        }
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void TakesDamages(int p_Damages)
     {
         m_Life -= p_Damages;

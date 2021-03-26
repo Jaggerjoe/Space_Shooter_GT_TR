@@ -321,6 +321,36 @@ MonoBehaviour:
       data1: 0
       data2: 0
   defaultFrameSettings: 0
+--- !u!1 &664710762
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 664710763}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &664710763
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 664710762}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1296047259}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1280608813
 GameObject:
   m_ObjectHideFlags: 0
@@ -428,6 +458,8 @@ GameObject:
   - component: {fileID: 1296047256}
   - component: {fileID: 1296047255}
   - component: {fileID: 1296047260}
+  - component: {fileID: 1296047261}
+  - component: {fileID: 1296047262}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -522,7 +554,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -29.8, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 664710763}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -539,6 +572,56 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_GameManag: {fileID: 1577619121}
+--- !u!114 &1296047261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1296047254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78c159d48a9028242a7b39c8ecb3e129, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Controller: {fileID: 11400000, guid: 824abf82358f82642998996f5899a50b, type: 2}
+  m_PlayerCanon:
+  - bonusNumberNeeded: 0
+    canon:
+    - {fileID: 664710763}
+  m_NumberOfBonus: 0
+  m_FireRate: 1
+  PlayerBullet: {fileID: 5904979231545180308, guid: 03e5054aab7b8f74c93309ca522a3d36, type: 3}
+  m_ShootingPlayer: 0
+--- !u!114 &1296047262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1296047254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36abe829b27551346921d882a2c826f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Life: 3
+  m_input:
+    m_Name: Input
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: b7212db4-511d-4240-9390-ed289be0e2cf
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: d5a8ffbc-9722-471d-a4b3-db67e88ba0a6
+      m_Path: <Keyboard>/a
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Input
+      m_Flags: 0
 --- !u!1 &1577619120
 GameObject:
   m_ObjectHideFlags: 0

@@ -10,6 +10,9 @@ public class PlayerCanon
 }
 public class ShootPlayer : MonoBehaviour
 {
+    [SerializeField][Header("InputManager")][Space(20)]
+    private SO_PlayerController m_Controller = null;
+
     //PlayerCanon
     [SerializeField]
     private PlayerCanon[] m_PlayerCanon = null;
@@ -23,6 +26,7 @@ public class ShootPlayer : MonoBehaviour
     [SerializeField]
     private GameObject PlayerBullet = null;
 
+
     private float m_PlayerLaser;
     private float m_PlayerFireRate = 0;
     public float m_ShootingPlayer = 0;
@@ -30,13 +34,13 @@ public class ShootPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Shoot(m_ShootingPlayer);   
+        Shoot(m_Controller.ShootPlayer);   
     }
 
-    private void Shoot(float _FiraRate)
+    private void Shoot(bool _FiraRate)
     {
         m_PlayerFireRate += Time.deltaTime;
-        if (_FiraRate == 1)
+        if (_FiraRate)
         {
             if (m_PlayerFireRate >= m_FireRate)
             {
